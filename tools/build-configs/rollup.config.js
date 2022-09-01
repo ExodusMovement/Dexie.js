@@ -1,4 +1,3 @@
-import sourcemaps from 'rollup-plugin-sourcemaps';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import cleanup from 'rollup-plugin-cleanup';
 
@@ -16,11 +15,10 @@ export default {
   output: [{
     file: path.resolve(__dirname, '../../dist/dexie.mjs'),
     format: 'es',
-    sourcemap: true,
+    sourcemap: false,
     banner: readFileSync(path.resolve(__dirname, 'banner.txt')),
   }],
   plugins: [
-    sourcemaps(),
     nodeResolve({module: true, jsnext: true, browser: true, ignoreGlobal: false}),
     cleanup()
   ],

@@ -11,7 +11,7 @@
     "lib": ["es2015", "dom"],
     "forceConsistentCasingInFileNames": true,
     "outDir": "../tools/tmp/src/",
-    "sourceMap": true
+    "sourceMap": false
   },
   "dirs": [
     "."
