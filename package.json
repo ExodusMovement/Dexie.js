@@ -5,7 +5,6 @@
   "main": "dist/dexie.js",
   "module": "dist/dexie.mjs",
   "jsnext:main": "dist/dexie.mjs",
-  "typings": "dist/dexie.d.ts",
   "jspm": {
     "format": "cjs",
     "ignore": [
@@ -44,16 +43,12 @@
   },
   "just-build": {
     "default": [
-      "# Build dist/dexie.js, dist/dexie.mjs and dist/dexie.d.ts",
       "cd src",
       "tsc [--watch 'Watching for file changes']",
       "rollup -c ../tools/build-configs/rollup.config.js",
       "rollup -c ../tools/build-configs/rollup.umd.config.js",
       "node ../tools/replaceVersionAndDate.js ../dist/dexie.js",
-      "node ../tools/replaceVersionAndDate.js ../dist/dexie.mjs",
-      "dts-bundle-generator --umd-module-name Dexie -o ../dist/dexie.d.ts public/index.d.ts",
-      "node ../tools/prepend.js ../dist/dexie.d.ts ../tools/build-configs/banner.txt",
-      "node ../tools/replaceVersionAndDate.js ../dist/dexie.d.ts"
+      "node ../tools/replaceVersionAndDate.js ../dist/dexie.mjs"
     ]
   },
   "engines": {
