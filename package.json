@@ -2,15 +2,9 @@
   "name": "dexie",
   "version": "3.0.4",
   "description": "A Minimalistic Wrapper for IndexedDB",
-  "main": "dist/dexie.js",
+  "main": "dist/dexie.mjs",
   "module": "dist/dexie.mjs",
-  "jsnext:main": "dist/dexie.mjs",
-  "jspm": {
-    "format": "cjs",
-    "ignore": [
-      "src/"
-    ]
-  },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/dfahlander/Dexie.js.git"
@@ -46,9 +40,7 @@
       "cd src",
       "tsc [--watch 'Watching for file changes']",
       "rollup -c ../tools/build-configs/rollup.config.js",
-      "rollup -c ../tools/build-configs/rollup.umd.config.js",
-      "node ../tools/replaceVersionAndDate.js ../dist/dexie.js",
-      "node ../tools/replaceVersionAndDate.js ../dist/dexie.mjs"
+      "node ../tools/replaceVersionAndDate.cjs ../dist/dexie.mjs"
     ]
   },
   "engines": {
