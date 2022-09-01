@@ -1,4 +1,4 @@
-import nodeResolve from 'rollup-plugin-node-resolve';
+import nodeResolve from '@rollup/plugin-node-resolve';
 import cleanup from 'rollup-plugin-cleanup';
 
 import {readFileSync} from 'fs';
@@ -20,7 +20,7 @@ export default {
   }],
   plugins: [
     nodeResolve({module: true, jsnext: true, browser: true, ignoreGlobal: false}),
-    cleanup()
+    cleanup({ comments: 'none' }) // similar to 2.0.1 behavior
   ],
   onwarn ({loc, frame, code, message}) {
     if (ERRORS_TO_IGNORE.includes(code)) return;
